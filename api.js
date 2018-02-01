@@ -10,3 +10,4 @@
       var hex = $("<div>").text(response.hex.value)
       
     });
+    
