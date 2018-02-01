@@ -1,13 +1,11 @@
 
-		var colorURL = "http://thecolorapi.com/id?hex=0047AB&format=html"
-
-
+    
+    
+var colorURL = "http://www.thecolorapi.com/id?hex=43D9E9"
 		
     $.ajax({
       url: colorURL,
       method: "GET"
     }).then(function(response) {
-      var hex = $("<div>").text(response.hex.value)
-      
+      console.log (response);
     });
-    
