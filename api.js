@@ -1,32 +1,37 @@
 
 
-var value = "0047AB";    
-var queryURLBase =  "http://thecolorapi.com/id?hex"
+// var value = "0047AB";
+var queryURLBase = "http://www.thecolorapi.com/id?format=json&hex=E46EE8"
 
 
-var colorgenerated = 0;		
+// "http://thecolorapi.com/id?hex=0000ff"
 
-    $.ajax({
-      url: queryURLBase,
-      method: "GET"
-    }).then(function(response) {
-      console.log(response.hex.value);
-    })
 
-   var getRandomColor = function() {
-      var letters = '0123456789ABCDEF';
-      var color = '#';
-      for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 260)];
-      }
-      return color;
-    };
-    
-    //click event will change background color on each click 
-    var setRandomColor = function () {
-      $("#colorDiv").css("background-color", getRandomColor());
-      $("colorChange").click("setRandomColor()");
-    };
+// var colorgenerated = 0;
+
+$.ajax({
+  url: queryURLBase,
+  method: "GET"
+}).then(function (response) {
+  console.log(response.hex.value);
+  console.log(response.name.value);
+})
+
+//  var getRandomColor = function() {
+//     var letters = '0123456789ABCDEF';
+//     var color = '#';
+//     for (var i = 0; i < 6; i++) {
+//       color += letters[Math.floor(Math.random() * 260)];
+//     }
+//     return color;
+//   };
+
+//click event will change background color on each click 
+
+// var setRandomColor = function () {
+//   $("#colorDiv").css("background-color", getRandomColor());
+//   $("colorChange").click("setRandomColor()");
+// };
 
 
 //----------------------------------------------------------------------------------
@@ -44,5 +49,14 @@ var colorgenerated = 0;
   //     renderButtons();
   //   });
   // }
-    
-    
+
+//---------------api gives us hex and name JSON-----------------------------
+// var queryURLBase = "http://www.thecolorapi.com/id?format=json&hex=E46EE8"
+
+// $.ajax({
+//   url: queryURLBase,
+//   method: "GET"
+// }).then(function (response) {
+//   console.log(response.hex.value);
+//   console.log(response.name.value);
+// })
