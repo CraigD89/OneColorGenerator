@@ -22,8 +22,11 @@ $(document).ready(function () {
       // $("#hexInfo").append(response.hex.value);
       // $("#hexInfo").append(response.name.value);
 
-      $("#hexInfo").append(response.hex.value);
-      $("#hexInfo").append(response.name.value);
+      // $("#hexInfo").append(response.hex.value);
+      // $("#hexInfo").append(response.name.value);
+
+      $("#hexInfo").text(response.hex.value);
+      $("#colorName").text(response.name.value);
 
       // renderButton();
       console.log("res", response);
@@ -37,6 +40,11 @@ $(document).ready(function () {
    $("body").css("background-color", "#"+hex());
 
    //on click 
+   $("#generatorBtn").click(function(){
+     hex();
+     $("body").css("background-color", "#"+hex());
+
+   });
 });
 
 //------------------------------create a render fxn --------------------------
