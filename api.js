@@ -17,20 +17,27 @@ var hex = function () {
       url: queryURLBase,
       method: "GET"
     }).then(function (response) {
-      console.log(response.hex.value);
-      console.log(response.name.value);
+      $("#hexInfo").text(response.hex.value + response.name.value) ||
+      $("hexInfo").text(JSON.stringify(response.hex.value + response.name.value));
+      renderButton();
+      // console.log(response.hex.value);
+      // console.log(response.name.value);
     });
 
 
 };
+//------------------------------create a render fxn --------------------------
+var renderButton = function (){
 
+}
 
 
 
 
 //click event will change background color on each click 
 // var setRandomColor = function () {
-  $("body").css("background-color", hex());
+  
+$("body").css("background-color", hex());
 //   $("colorChange").click("setRandomColor()");
 // };
 
@@ -61,3 +68,6 @@ var hex = function () {
 //   console.log(response.hex.value);
 //   console.log(response.name.value);
 // })
+//--------------------------button style----------------
+//add shadow to button
+//if black turn elements to white
