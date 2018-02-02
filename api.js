@@ -1,35 +1,36 @@
 
+//Random hex generator
+var hex = function () {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16) | 0];
+  }
+  return color;
 
-// var value = "0047AB";
-var queryURLBase = "http://www.thecolorapi.com/id?format=json&hex=E46EE8"
+  console.log("Random color is ", color);
 
 
-// "http://thecolorapi.com/id?hex=0000ff"
+  var queryURLBase = "http://www.thecolorapi.com/id?format=json&hex=" + hex;
+
+    $.ajax({
+      url: queryURLBase,
+      method: "GET"
+    }).then(function (response) {
+      console.log(response.hex.value);
+      console.log(response.name.value);
+    });
 
 
-// var colorgenerated = 0;
+};
 
-$.ajax({
-  url: queryURLBase,
-  method: "GET"
-}).then(function (response) {
-  console.log(response.hex.value);
-  console.log(response.name.value);
-})
 
-//  var getRandomColor = function() {
-//     var letters = '0123456789ABCDEF';
-//     var color = '#';
-//     for (var i = 0; i < 6; i++) {
-//       color += letters[Math.floor(Math.random() * 260)];
-//     }
-//     return color;
-//   };
+
+
 
 //click event will change background color on each click 
-
 // var setRandomColor = function () {
-//   $("#colorDiv").css("background-color", getRandomColor());
+  $("body").css("background-color", hex());
 //   $("colorChange").click("setRandomColor()");
 // };
 
