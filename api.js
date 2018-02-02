@@ -42,7 +42,7 @@ $(document).ready(function () {
    //on click 
    $("#generatorBtn").click(function(){
      hex();
-     $("body").css("background-color", "#"+hex());
+        $("body").css("background-color", "#"+hex());
 
    });
 });
@@ -88,10 +88,6 @@ $(document).ready(function () {
 // };
 
 
-
-
-
-
 //click event will change background color on each click 
 // var setRandomColor = function () {
 
@@ -126,6 +122,39 @@ $(document).ready(function () {
 //   console.log(response.hex.value);
 //   console.log(response.name.value);
 // })
-//--------------------------button style----------------
+//--------------------------SHAMAN IDEAS button style----------------
 //add shadow to button
 //if black turn elements to white
+
+
+//-----------------------PSEUDO CODE YAHOO API FEATURE---------------------
+//search for yahoo.dev tools 
+//parameter search: img
+// api "https://yboss.yahooapis.com/ysearch/images?q={keywords}[&param1=val1&param2=val2&etc]"
+//turn on filters 
+
+// var queryURLYahoo = "https://yboss.yahooapis.com/ysearch/images?q=dog+ show&format=json&img.dimensions=wallpaper]"
+
+// $.ajax({
+//   url: queryURLYahoo,
+//   method: "GET"
+// }).then(function (response) {
+
+//   //<add to html link tag> target="_blank";
+
+// need url's from the response Json bossresponse.images.results.result.clickurl 
+// //change xml to json
+// //&count to 10
+// build for loop index array 
+// var yahooImg =[];
+
+// for (var i = 0; i < results.bossresponse.images.results.length; i++) {
+//   color += letters[Math.floor(Math.random() * 16) | 0];
+// };
+
+
+//--------------------Project Information Feature--------animation slider--------
+
+function drawanimation () {
+   
+};

@@ -11,7 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
 
-     <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -28,9 +28,16 @@
 
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-1 col-md-offset-8 col-lg-1 col-lg-offset-">
-                    <button id="info">
-                        <h1>?</h1>
-                    </button>
+                    <div id="info">
+                        <h1>Learn More</h1>
+
+                        <div class="slider slider--visible">
+                             <p id="projectInfo"> Put Craig's project information here</p>
+                            <canvas id="projectInfoanvas" width="200" height="800">
+                               
+                            </canvas>
+                        </div>
+                    </div>
                     <div id="hex-display">
 
                     </div>
@@ -40,8 +47,8 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
 
-                    <h1 id = "hexInfo"></h1>
-                    <h1 id = "colorName"></h1>
+                    <h1 id="hexInfo"></h1>
+                    <h1 id="colorName"></h1>
                 </div>
             </div>
 
@@ -62,3 +69,18 @@
 </body>
 
 </html>
+
+<!--PSEUDO CODE FOR YAHOO API 
+    add one empty div in js
+    for (var i = 0; i < results.bossresponse.images.results.length; i++)){
+    create new element that says $("<img>").w3lookup(src=bossresponse.images.results.result.clickurlform the yahoo response) look up syntax add a src and alt tag }
+    append to empty div
+
+    need to work on the style of the new images
+
+    run for loop six times and each time generate a new image tag
+     js fxn that .appends the imgs to the div using yahoo api response
+    - inside the js fxn
+    {
+        -
+    }

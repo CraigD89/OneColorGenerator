@@ -26,3 +26,18 @@ h1 {
     
 }
 
+ .slider {
+    position: absolute;
+    right: 0;
+    background-color: rgb(34, 33, 33);
+    transform: translateX(100%);
+    
+ }
+ 
+ #info:hover .slider--visible {
+    transform: translateX(0%);
+    transition: transform 1s linear; 
+ } 
+  #projectInfo {
+      color: white;
+  }
