@@ -1,7 +1,8 @@
 
 
-var hex = "";    
-var queryURLBase =  "http://thecolorapi.com/id?hex=' '+ hex'"
+var value = "0047AB";    
+var queryURLBase =  "http://thecolorapi.com/id?hex"
+
 
 var colorgenerated = 0;		
 
@@ -9,9 +10,8 @@ var colorgenerated = 0;
       url: queryURLBase,
       method: "GET"
     }).then(function(response) {
-
-    });
-
+      console.log(response.hex.value);
+    })
 
    var getRandomColor = function() {
       var letters = '0123456789ABCDEF';
@@ -28,6 +28,21 @@ var colorgenerated = 0;
       $("colorChange").click("setRandomColor()");
     };
 
-    
+
+//----------------------------------------------------------------------------------
+
+  // function displayMovieInfo() {
+
+  //   var movie = $(this).attr("data-name");
+  //   var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
+
+  //   $.ajax({
+  //     url: queryURL,
+  //     method: "GET"
+  //   }).then(function(response) {
+  //     $("#movies-view").text(JSON.stringify(response));
+  //     renderButtons();
+  //   });
+  // }
     
     
