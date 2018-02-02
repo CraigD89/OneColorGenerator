@@ -1,17 +1,17 @@
 
 
     
-var queryURLBase =  "http://thecolorapi.com/id?hex=0047AB"
+// var queryURLBase =  "http://thecolorapi.com/id?hex=0047AB"
 
 
 
 
-    $.ajax({
-      url: queryURLBase,
-      method: "GET"
-    }).then(function(response) {
+//     $.ajax({
+//       url: queryURLBase,
+//       method: "GET"
+//     }).then(function(response) {
       
-    });
+//     });
 
   //  var getRandomColor = function() {
   //     var letters = '0123456789ABCDEF';
