@@ -111,4 +111,7 @@ button{
 
   .projectInfo {
       display: none;
-  }
+      float: left;
+    clear: both;
+    z-index: 3;
+    }
