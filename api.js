@@ -50,7 +50,7 @@ $(document).ready(function () {
 
 
 
-  $("#information").click(function () {
+  $("#info").click(function () {
     $("#toggle").toggle(".projectInfo");
   });
 
