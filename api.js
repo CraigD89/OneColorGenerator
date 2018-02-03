@@ -7,7 +7,7 @@ $(document).ready(function () {
     for (var i = 0; i < 6; i++) {
       color += letters[Math.floor(Math.random() * 16) | 0];
     };
- 
+
 
     console.log("Random color is ", color);
 
@@ -37,16 +37,27 @@ $(document).ready(function () {
     return color;
 
   };
-   $("body").css("background-color", "#"+hex());
+  $("body").css("background-color", "#" + hex());
 
-   //on click 
-   $("#generatorBtn").click(function(){
-     hex();
-        $("body").css("background-color", "#"+hex());
+  //on click 
+  $("#generatorBtn").click(function () {
+    hex();
+    $("body").css("background-color", "#" + hex());
 
-   });
+  });
+
+
+
+
+
+
+
+  $("#information").click(function () {
+    $("#toggle").toggle(".projectInfo");
+  });
+
+
 });
-
 //------------------------------create a render fxn --------------------------
 // var renderButton = function () {
 
@@ -155,6 +166,8 @@ $(document).ready(function () {
 
 //--------------------Project Information Feature--------animation slider--------
 
-function drawanimation () {
-   
-};
+// function drawanimation () {
+
+// };
+
+
