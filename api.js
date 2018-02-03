@@ -45,6 +45,15 @@ $(document).ready(function () {
         $("body").css("background-color", "#"+hex());
 
    });
+
+   $("#information").click(function(){
+    $("#projectInfo").toggleClass(".hidden");
+});
+
+
+
+
+
 });
 
 //------------------------------create a render fxn --------------------------
@@ -155,6 +164,8 @@ $(document).ready(function () {
 
 //--------------------Project Information Feature--------animation slider--------
 
-function drawanimation () {
+// function drawanimation () {
    
-};
+// };
+
+
