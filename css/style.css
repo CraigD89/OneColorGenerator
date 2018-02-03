@@ -1,6 +1,6 @@
 body {
     background-color: rosybrown;
-
+    text-align: center;
 }
 
 h1 {
@@ -26,6 +26,12 @@ h1 {
     
 }
 
+button{
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
  .slider {
     position: absolute;
     right: 0;
@@ -41,3 +47,23 @@ h1 {
   #projectInfo {
       color: white;
   }
+
+  .information
+  {
+   border: 10px;   
+  }  
+  
+  #hexInfo{
+    background: none;
+    color: black;
+    font-size: 100px;
+  }
+
+  #colorName{
+    background: none;
+    color: black;
+    font-size: 100px;
+  }
+
+
+  
