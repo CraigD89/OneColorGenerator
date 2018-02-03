@@ -1,25 +1,63 @@
 body {
-    background-color: rosybrown;
+    font-family: Arial, Helvetica, sans-serif;
+    height:100%;
+    
+}
+
+.row {
+    height: 300px;
+}
+#colorDiv {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.topHeader {
+    background-color: black;
 
 }
 
-h1 {
+.learnMore {
     background-color: black;
+
     color: white; 
     font-family: Arial, Helvetica, sans-serif;
+
 }
 
+footer {
+    height: 100px;
+    background-color: black;
+    color: white;
 
+
+}
+
+/*<div id="footer/button"></div>
+<div class="container fixed-bottom"></div>*/
+
+
+
+header {
+
+}
+
+#info {
+    float:right;
+
+}
+
+hidden div {
+
+
+}
 .container-fluid {
 
 }
 
 .wrapper {
 
-}
-
-.HEY {
-    
 }
 
 #generatorBtn {
