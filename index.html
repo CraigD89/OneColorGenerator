@@ -10,7 +10,7 @@
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
-
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:thin" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -23,12 +23,15 @@
 
             <div id="colorDiv" class="row">
                 <div class="col-xs-12 col-md-3">
-                    <div class="header">
+                    <div class="logo">
                         <h1>ONE COLOR GENERATOR</h1>
                     </div>
                     <!-- Generate photos button -->
                     <div id="photoSearch">
                         <button id="camera" class="glyphicon glyphicon-camera">
+                            <div id="images" class="hidden">
+                                <!-- Images will appear here when clicked -->
+                            </div>
                         </button>
                     </div>
                 </div>
@@ -40,8 +43,8 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-3">
-                    
-                    <div>    
+
+                    <div>
                         <button id="info">
                             <h1>?</h1>
                             <div id="toggle" class="projectInfo">
@@ -52,7 +55,7 @@
                                     your favorite color palette generator.</p>
                             </div>
                         </button>
-                        
+
                         <div id="generator">
                             <button id="generatorBtn">
                                 <h1>GENERATE COLOR</h1>
