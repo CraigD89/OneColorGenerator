@@ -44,8 +44,7 @@ $(document).ready(function () {
       console.log("googleURL", results);
     });
 
-    //------------------ after the ajax 'GET' comes back with results dig down and----------------- 
-    //----------------find then create a for loop ----------
+    //------------------ after the ajax 'GET' comes back dig down and find values then create a for loop ----------
 
     // for (var i = 0; i < results.googleapi.images.results.length; i++)){
     //   create new element that says $("<img>").w3lookup(src=bossresponse.images.results.result.clickurlform the yahoo response) look up syntax add a src and alt tag }
