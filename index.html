@@ -10,7 +10,7 @@
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
-
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:thin" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -22,24 +22,46 @@
         <div class="wrapper">
 
             <div id="colorDiv" class="row">
-                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-
-                    <h1>ONE COLOR GENERATOR</h1>
-
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-1 col-md-offset-8 col-lg-1 col-lg-offset-8">
-                    <div id="info">
-                        <button id="information">
-                            <h1>Learn More</h1>
-                            <!-- <div class="hidden"> -->
-
-                                 <p id="toggle" class="projectInfo">Welcome! OneColorGenerator is a springboard for designers and artists in finding the perfect
-                                color to begin their next project. All you have to do is click the "Generate New Color" button
-                                to have a new color appear on the screen. The HTML code displayed on the page can be copied
-                                to use in programs such as Adobe Photoshop, your preferred code editor, or even your favorite
-                                color palette generator.</p>
-                            <!-- </div> -->
+                <div class="col-xs-12 col-md-3">
+                    <div class="logo">
+                        <h1>ONE COLOR GENERATOR</h1>
+                    </div>
+                    <!-- Generate photos button -->
+                    <div id="photoSearch">
+                        <button id="camera" class="glyphicon glyphicon-camera">
+                            <div id="images" class="hidden">
+                                <!-- Images will appear here when clicked -->
+                            </div>
                         </button>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <div id="information">
+                        <h1 id="hexInfo"></h1>
+                        <h1 id="colorName"></h1>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3">
+
+                    <div>
+                        <button id="info">
+                            <h1>?</h1>
+                            <div id="toggle" class="projectInfo">
+                                <p>OneColorGenerator is a springboard for designers and artists in finding the perfect color
+                                    to begin their next project. All you have to do is click the "Generate Color" button
+                                    to have a new color appear on the screen. The HTML code displayed on the page can be
+                                    copied to use in programs such as Adobe Photoshop, your preferred code editor, or even
+                                    your favorite color palette generator.</p>
+                            </div>
+                        </button>
+
+                        <div id="generator">
+                            <button id="generatorBtn">
+                                <h1>GENERATE COLOR</h1>
+                            </button>
+                        </div>
+
                     </div>
                     <!-- <div id="hex-display">
 
@@ -47,44 +69,59 @@
                 </div>
             </div>
 
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
                     <div id="information">
                         <h1 id="hexInfo"></h1>
                         <h1 id="colorName"></h1>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                     <button id="generatorBtn">
                         <h1>GENERATE COLOR</h1>
                     </button>
                 </div>
-            </div>
+            </div> -->
+
+
+
+
+            <!-- Generate photos button -->
+            <!-- <div id="photoSearch">
+                <button id="camera" class="glyphicon glyphicon-camera">
+                </button>
+            </div> -->
+
+            <!-- Generate Color button -->
+            <!-- <div class="footer">
+                <button id="generatorBtn">
+                    <h1>GENERATE COLOR</h1>
+                </button>
+            </div> -->
+
         </div>
     </div>
 
+    <!--[ footer ] -->
+
+
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-    <script type="text/javascript"></script>
+    <!-- <script type="text/javascript"></script> -->
     <script type="text/javascript" src="api.js"></script>
 
 </body>
 
 </html>
 
-<!--PSEUDO CODE FOR YAHOO API 
-    add one empty div in js
-    for (var i = 0; i < results.bossresponse.images.results.length; i++)){
-    create new element that says $("<img>").w3lookup(src=bossresponse.images.results.result.clickurlform the yahoo response) look up syntax add a src and alt tag }
-    append to empty div
 
-    need to work on the style of the new images
 
-    run for loop six times and each time generate a new image tag
-     js fxn that .appends the imgs to the div using yahoo api response
-    - inside the js fxn
-    {
-        -
-    }
+
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+                    <div id="information">
+                        <h1 id="hexInfo"></h1>
+                        <h1 id="colorName"></h1>
+                    </div>
+                </div> -->

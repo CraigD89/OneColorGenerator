@@ -1,0 +1,133 @@
+html body {
+    margin: 0 auto;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: thin;
+}
+
+/* .row {
+    height: 300px;
+} */
+
+h1{
+    background-color: transparent;
+    font-weight: bold;
+}
+
+#colorDiv {
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: thin;
+}
+
+.logo {
+   text-align: center;
+   /* width: 25%; */
+   position: fixed;
+   left: 0;
+   top: 0;
+   padding: 10px;
+}
+
+.learnMore {
+    background-color: transparent;
+    color: black; 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: thin;
+}
+
+#info {
+    float:right;
+    /* font-weight: bold; */
+    font-size: 20px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 10%;
+}
+
+button{
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+/* .slider {
+    position: absolute;
+    right: 0;
+    background-color: rgb(34, 33, 33);
+    transform: translateX(100%);
+ } */
+ 
+ /* #info:hover .slider--visible {
+    transform: translateX(0%);
+    transition: transform 1s linear; 
+ }  */
+
+p {
+    color: black;
+    background-color: transparent;
+}
+  
+  #hexInfo{
+    background: none;
+    color: black;
+    font-size: 100px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  #colorName{
+    background: none;
+    color: black;
+    font-size: 100px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+.projectInfo {
+      display: none;
+      float: right;
+}
+
+#generatorBtn {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 25%;
+    background-color: transparent;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+ #information{
+     padding-top: 40%;
+     padding-bottom: 60%;
+}
+
+#camera{
+
+    background-color: transparent;
+    color: black;
+    font-size: 50px;
+}
+
+/* footer {
+    height: 100px;
+    background-color: black;
+    color: white;
+} */
+
+/* .header {
+    position: fixed;
+    top: 0;
+} */
+
+#photoSearch{
+    padding-top: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
