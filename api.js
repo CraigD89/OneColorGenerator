@@ -1,7 +1,7 @@
-$(document).ready(function() {
+$(document).ready(function () {
   //Random hex generator
 
-  var hex = function() {
+  var hex = function () {
     var letters = "0123456789ABCDEF";
     var color = "";
     for (var i = 0; i < 6; i++) {
@@ -16,7 +16,7 @@ $(document).ready(function() {
     $.ajax({
       url: queryURLBase,
       method: "GET"
-    }).then(function(response) {
+    }).then(function (response) {
       // $("#hexInfo").append(response.hex.value);
       // $("#hexInfo").append(response.name.value);
 
@@ -33,6 +33,26 @@ $(document).ready(function() {
       var colorName = response.name.value;
       console.log("colorName", colorName);
     });
+    //start of chain to googleapi
+    //
+
+    var googleURL = "http://www.google.com/search?q=(nature+OR+painting+OR+photography+OR+food+OR+interior+design+OR+logos+OR+landscapes+OR+ads+OR+pantone)" + colorName;
+    $.ajax({
+      url: googleURL,
+      method: "GET",
+    }).then(function (results) {
+      console.log("googleURL", results);
+    });
+
+    //------------------ after the ajax 'GET' comes back with results dig down and----------------- 
+    //----------------find then create a for loop ----------
+
+    // for (var i = 0; i < results.googleapi.images.results.length; i++)){
+    //   create new element that says $("<img>").w3lookup(src=bossresponse.images.results.result.clickurlform the yahoo response) look up syntax add a src and alt tag }
+    //   append to empty div
+    //-----------once we know what we need to dig down for we can jquery to add the images to the div or put this in
+    //a for loop-----------------------------------------------------------------------------------------------
+
 //start of chain to googleapi
 // 
 // var googleURL = "jenna's url";
@@ -44,39 +64,41 @@ $(document).ready(function() {
 //       });
 //------------------ after the ajax 'GET' comes back with results dig down and----------------- 
 //----------------find then create a for loop ----------
-var googleresults
+// var googleresults
     // for (var i = 0; i < results.googleresults.images.results.length; i++)){
 //   create new element that says $("<img>").w3lookup(src=bossresponse.images.results.result.clickurlform the yahoo response) look up syntax add a src and alt tag }
 //   append to empty div
 //-----------once we know what we need to dig down for we can jquery to add the images to the div or put this in
 //a for loop-----------------------------------------------------------------------------------------------
 
-//       $("#craigsnewdiv").text(results.new.drill.param);
-//       console.log("results.new.drll.param", body.new.drill.param);
+    //       $("#craigsnewdiv").text(results.new.drill.param);
+    //       console.log("results.new.drll.param", body.new.drill.param);
     // });
-    
+
     // $("body").css("background-color", hex());
-    return color;
-    
+    //return color;
+
   };
-  $("body").css("background-color", "#" + hex());
+  // $("body").css("background-color", "#" + hex());
 
-  //on click
-  $("#generatorBtn").click(function() {
-    hex();
-    $("body").css("background-color", "#" + hex());
-  });
+  // //on click
+  // $("#generatorBtn").click(function () {
+  //   hex();
+  //   $("body").css("background-color", "#" + hex());
+  // });
 
-  $("#info").click(function() {
-    $("#toggle").toggle(".projectInfo");
-  });
+  // $("#info").click(function () {
+  //   $("#toggle").toggle(".projectInfo");
+  // });
 
-$("#craigcamerabtn").click(function(){
-  $("#togglemaybe").toggle(".projectInfo");
+  $("#images").click(function () {
+    $("#togglemaybe").toggle(".projectInfo");
+// $("#craigcamerabtn").click(function(){
+//   $("#togglemaybe").toggle(".projectInfo");
+
+  // });
 
 });
-
-  });
 
 //------------------------------create a render fxn --------------------------
 // var renderButton = function () {
