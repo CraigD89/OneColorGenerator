@@ -1,119 +1,128 @@
-$(document).ready(function () {
-  //Random hex generator
+$(document).ready(function() {
+        console.log("I am working")
+            //Random hex generator
+        var hex = function() {
+            var letters = "0123456789ABCDEF";
+            var color = "";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16) | 0];
+            }
 
-  var hex = function () {
-    var letters = "0123456789ABCDEF";
-    var color = "";
-    for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16) | 0];
-    }
+            console.log("Random color is ", color);
 
-    console.log("Random color is ", color);
+            var queryURLBase = "http://www.thecolorapi.com/id?format=json&hex=" + color;
+            // console.log("url", queryURLBase);
 
-    var queryURLBase = "http://www.thecolorapi.com/id?format=json&hex=" + color;
-    console.log("url", queryURLBase);
+            $.ajax({
+                url: queryURLBase,
+                method: "GET"
+            }).then(function(response) {
+                // $("#hexInfo").append(response.hex.value);
+                // $("#hexInfo").append(response.name.value);
 
-    $.ajax({
-      url: queryURLBase,
-      method: "GET"
-    }).then(function (response) {
-      // $("#hexInfo").append(response.hex.value);
-      // $("#hexInfo").append(response.name.value);
+                // $("#hexInfo").append(response.hex.value);
+                // $("#hexInfo").append(response.name.value);
+                $("body").css("background-color", hex());
+                $("#hexInfo").text(response.hex.value);
+                $("#colorName").text(response.name.value);
+                var colorName = response.name.value;
 
-      // $("#hexInfo").append(response.hex.value);
-      // $("#hexInfo").append(response.name.value);
+                // renderButton();
+                console.log("res", response);
+                console.log("Hex is", response.hex.value);
+                console.log("Color name is ", response.name.value);
+                console.log("colorName", colorName);
+            });
+            //start of chain to googleapi
+            //
 
-      $("#hexInfo").text(response.hex.value);
-      $("#colorName").text(response.name.value);
+            var googleURL = "https://www.googleapis.com/customsearch/v1?parameters"
+                // "http://www.google.com/search?q=(nature+OR+painting+OR+photography+OR+food+OR+interior+design+OR+logos+OR+landscapes+OR+ads+OR+pantone)" + colorName;
+            $.ajax({
+                url: googleURL,
+                method: "GET",
+                Data: {
+                    key: AIzaSyC0JcHKG7NamAdCM1PA5nMKQu9SYvpzUZI,
+                    cx: AIzaSyAFBVlKmK9FQoTzO3eJmvUvNMx8jH4Dp2E,
+                    q: colorName + "photo"
+                }
+            }).then(function(results) {
+                console.log("googleURL", results);
+            });
 
-      // renderButton();
-      console.log("res", response);
-      console.log("Hex is", response.hex.value);
-      console.log("Color name is ", response.name.value);
-      var colorName = response.name.value;
-      console.log("colorName", colorName);
-    });
-    //start of chain to googleapi
-    //
+            $("#generatorBtn").click(function() {
+                hex();
+                $("body").css("background-color", "#" + hex());
+            });
 
-    var googleURL = "http://www.google.com/search?q=(nature+OR+painting+OR+photography+OR+food+OR+interior+design+OR+logos+OR+landscapes+OR+ads+OR+pantone)" + colorName;
-    $.ajax({
-      url: googleURL,
-      method: "GET",
-    }).then(function (results) {
-      console.log("googleURL", results);
-    });
+            $("#info").click(function() {
+                $("#toggle").toggle(".projectInfo");
+            });
+            //------------------ after the ajax 'GET' comes back with results dig down and----------------- 
+            //----------------find then create a for loop ----------
 
-    //------------------ after the ajax 'GET' comes back with results dig down and----------------- 
-    //----------------find then create a for loop ----------
+            // for (var i = 0; i < results.googleapi.images.results.length; i++)){
+            //   create new element that says $("<img>").w3lookup(src=bossresponse.images.results.result.clickurlform the yahoo response) look up syntax add a src and alt tag }
+            //   append to empty div
+            //-----------once we know what we need to dig down for we can jquery to add the images to the div or put this in
+            //a for loop-----------------------------------------------------------------------------------------------
 
-    // for (var i = 0; i < results.googleapi.images.results.length; i++)){
-    //   create new element that says $("<img>").w3lookup(src=bossresponse.images.results.result.clickurlform the yahoo response) look up syntax add a src and alt tag }
-    //   append to empty div
-    //-----------once we know what we need to dig down for we can jquery to add the images to the div or put this in
-    //a for loop-----------------------------------------------------------------------------------------------
+            //start of chain to googleapi
+            // 
+            // var googleURL = "jenna's url";
+            //       $.ajax({
+            //         url: "googleURL + colorName +",
+            //         method: "GET"
+            //       }).then(function(results) {
+            //         console.log("googleURL", results);
+            //       });
+            //------------------ after the ajax 'GET' comes back with results dig down and----------------- 
+            //----------------find then create a for loop ----------
+            // var googleresults
+            // for (var i = 0; i < results.googleresults.images.results.length; i++)){
+            //   create new element that says $("<img>").w3lookup(src=bossresponse.images.results.result.clickurlform the yahoo response) look up syntax add a src and alt tag }
+            //   append to empty div
+            //-----------once we know what we need to dig down for we can jquery to add the images to the div or put this in
+            //a for loop-----------------------------------------------------------------------------------------------
 
-//start of chain to googleapi
-// 
-// var googleURL = "jenna's url";
-//       $.ajax({
-//         url: "googleURL + colorName +",
-//         method: "GET"
-//       }).then(function(results) {
-//         console.log("googleURL", results);
-//       });
-//------------------ after the ajax 'GET' comes back with results dig down and----------------- 
-//----------------find then create a for loop ----------
-// var googleresults
-    // for (var i = 0; i < results.googleresults.images.results.length; i++)){
-//   create new element that says $("<img>").w3lookup(src=bossresponse.images.results.result.clickurlform the yahoo response) look up syntax add a src and alt tag }
-//   append to empty div
-//-----------once we know what we need to dig down for we can jquery to add the images to the div or put this in
-//a for loop-----------------------------------------------------------------------------------------------
+            //       $("#craigsnewdiv").text(results.new.drill.param);
+            //       console.log("results.new.drll.param", body.new.drill.param);
+            // });
 
-    //       $("#craigsnewdiv").text(results.new.drill.param);
-    //       console.log("results.new.drll.param", body.new.drill.param);
-    // });
 
-    // $("body").css("background-color", hex());
-    //return color;
+            //return color;
 
-  };
-  // $("body").css("background-color", "#" + hex());
+        };
+        // $("body").css("background-color", "#" + hex());
 
-  // //on click
-  // $("#generatorBtn").click(function () {
-  //   hex();
-  //   $("body").css("background-color", "#" + hex());
-  // });
+        // //on click
 
-  // $("#info").click(function () {
-  //   $("#toggle").toggle(".projectInfo");
-  // });
 
-  $("#images").click(function () {
-    $("#togglemaybe").toggle(".projectInfo");
-// $("#craigcamerabtn").click(function(){
-//   $("#togglemaybe").toggle(".projectInfo");
 
-  // });
 
-});
+        $("#images").click(function() {
+            $("#togglemaybe").toggle(".projectInfo");
+            // $("#craigcamerabtn").click(function(){
+            //   $("#togglemaybe").toggle(".projectInfo");
 
-//------------------------------create a render fxn --------------------------
-// var renderButton = function () {
+            // });
 
-//   $("#generatorBtn").click(function () {
+        });
+    })
+    //------------------------------create a render fxn --------------------------
+    // var renderButton = function() {
 
-//     var hex = function () {
-//       var letters = '0123456789ABCDEF';
-//       var color = '#';
-//       for (var i = 0; i < 6; i++) {
-//         color += letters[Math.floor(Math.random() * 16) | 0];
-//       }
-//       return color;
+//         $("#generatorBtn").click(function() {
 
-//       // console.log("Random color is ", color);
+//                     var hex = function() {
+//                             var letters = '0123456789ABCDEF';
+//                             var color = '#';
+//                             for (var i = 0; i < 6; i++) {
+//                                 color += letters[Math.floor(Math.random() * 16) | 0];
+//                             }
+// return color;
+
+// console.log("Random color is ", color);
 
 //       var queryURLBase = "http://www.thecolorapi.com/id?format=json&hex=" + hex;
 
@@ -133,7 +142,6 @@ $(document).ready(function () {
 //       });
 //     };
 
-//   });
 
 //   $("body").css("background-color", hex());
 
@@ -202,7 +210,3 @@ $(document).ready(function () {
 // };
 
 //--------------------Project Information Feature--------animation slider--------
-
-// function drawanimation () {
-
-// };
