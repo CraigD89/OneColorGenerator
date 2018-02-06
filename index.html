@@ -31,6 +31,24 @@
                         <button id="camera" class="glyphicon glyphicon-camera">
                             <div id="images" class="hidden">
                                 <!-- Images will appear here when clicked -->
+                                <div class="container-fluid">
+                                    <div class="ImgSearch">
+                                        <!--Div to Display Image search based on color-->
+                                        <!-- Code from google custom search engine-->
+                                        <script>
+                                            (function() {
+                                                var cx = 'AIzaSyC9VnmGNkB8OG5cqpHTzKAlfePwLXDrIEc';
+                                                var gcse = document.createElement('script');
+                                                gcse.type = 'text/javascript';
+                                                gcse.async = true;
+                                                gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                                                var s = document.getElementsByTagName('script')[0];
+                                                s.parentNode.insertBefore(gcse, s);
+                                            })();
+                                        </script>
+                                        <gcse:search defaulttoimagesearch="true" disablewebsearch="true" imagesearchsesultsetsize="small"></gcse:search>
+                                    </div>
+                                </div>
                             </div>
                         </button>
                     </div>
@@ -67,6 +85,7 @@
 
                     </div> -->
                 </div>
+                
             </div>
 
             <!-- <div class="row">
@@ -105,9 +124,8 @@
         </div>
     </div>
 
+
     <!--[ footer ] -->
-
-
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
     <!-- <script type="text/javascript"></script> -->
     <script type="text/javascript" src="api.js"></script>
@@ -115,13 +133,3 @@
 </body>
 
 </html>
-
-
-
-
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-                    <div id="information">
-                        <h1 id="hexInfo"></h1>
-                        <h1 id="colorName"></h1>
-                    </div>
-                </div> -->
