@@ -126,11 +126,27 @@ p {
     top: 0;
 } */
 
-#photoSearch{
+/* #photoSearch{
     padding-top: 10px;
     position: fixed;
     left: 0;
     bottom: 0;
+} */
+
+.wrap
+{
+  float:left;
+  position:relative;
+  width:150px;
+  height:150px;
+  /* margin:20px; */
+  overflow:hidden;
+}
+img
+{
+ top:0px;
+ left:0;
+ position:absolute;
 }
 
 a:link {
