@@ -1,5 +1,4 @@
 $(document).ready(function () {
-<<<<<<< HEAD
   console.log("I am working")
   // var colorName = "";
   //Random hex generator
@@ -8,16 +7,6 @@ $(document).ready(function () {
     var color = "";
     for (var i = 0; i < 6; i++) {
       color += letters[Math.floor(Math.random() * 16) | 0];
-=======
-//   console.log("I am working")
-//   //Random hex generator
-//   var hex = function () {
-//     var letters = "0123456789ABCDEF";
-//     var color = "";
-//     for (var i = 0; i < 6; i++) {
-//       color += letters[Math.floor(Math.random() * 16) | 0];
-    console.log("I am working")
-    //Random hex generator
     var hex = function () {
         var letters = "0123456789ABCDEF";
         var color = "";
@@ -95,7 +84,6 @@ $(document).ready(function () {
         return color;
         return colorName;
 
->>>>>>> db85e4e2a58c1d24b6ccbaf61f954504cfaca08a
     };
 
 
