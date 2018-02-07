@@ -142,12 +142,13 @@ p {
   /* margin:20px; */
   overflow:hidden;
 }
+
 img
 {
  top:0px;
  left:0;
  position:absolute;
-}
+} 
 
 a:link {
     color: black;
