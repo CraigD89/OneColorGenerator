@@ -1,5 +1,6 @@
 $(document).ready(function () {
   console.log("I am working")
+  // var colorName = "";
   //Random hex generator
   var hex = function () {
     var letters = "0123456789ABCDEF";
@@ -18,6 +19,8 @@ $(document).ready(function () {
       url: queryURLBase,
       method: "GET"
     }).then(function (response) {
+
+      
       // $("#hexInfo").append(response.hex.value);
       // $("#hexInfo").append(response.name.value);
 
@@ -29,20 +32,25 @@ $(document).ready(function () {
       $("#colorName").text(response.name.value);
       var colorName = response.name.value;
 
-      renderButton();
-      console.log("res", response);
-      console.log("Hex is", response.hex.value);
-      console.log("Color name is ", response.name.value);
-      console.log("colorName", colorName);
+      // renderButton();
+      // console.log("res", response);
+      // console.log("Hex is", response.hex.value);
+      // console.log("Color name is ", response.name.value);
+      // console.log("colorName", colorName);
     });
-    return color;
+    //------------trying to get to colorName--------------
+    var publicAPI = {
+      color: color,
+      colorName: colorName,
+    }
+
+    return publicAPI;
 
   };
 
-  $("body").css("background-color", "#" + hex());
+  $("body").css("background-color", "#" + hex().color);
 
-  
-  var flickrURL = "https://api.flickr.com/services/rest?method=flickr.photos.search&api_key=d5fbbf2c476fdcca3ad42c6374949a6a&format=json&nojsoncallback=1&text=" + colorName + "&extras=url_o";
+  var flickrURL = "https://api.flickr.com/services/rest?method=flickr.photos.search&api_key=d5fbbf2c476fdcca3ad42c6374949a6a&format=json&nojsoncallback=1&text=" + hex().colorName +"&extras=url_o";
 
   $.ajax({
     url: flickrURL,
@@ -50,6 +58,7 @@ $(document).ready(function () {
   }).then(function (results) {
     console.log('flckr', results.photos.photo[0].url_o);
   });
+});
 
 
   // var googleURL = "https://www.googleapis.com/customsearch/v1?parameters";
