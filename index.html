@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
-    <title>COlor Generator</title>
+    <title>Color Generator</title>
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
@@ -20,18 +20,40 @@
 
         <div class="wrapper">
 
-            <div id="colorDiv" class="row">
-                <div class="col-xs-12 col-md-3">
-                    <div class="logo">
+                        <div id="colorDiv" class="row">
+                                <div class="col-xs-12 col-md-3">
+                    <!-- <div class="logo">
                         <h1>ONE COLOR GENERATOR</h1>
-                    </div>
+                    </div> -->
                     <!-- Generate photos button -->
                     <div id="photoSearch">
+                        
                         <button id="camera" class="glyphicon glyphicon-camera">
-                            <div id="images" class="hidden">
+
+                                <div id="top-left" class="wrap">
+                                        <img src="references/starburst.jpg" width="150px" />
+                                        <img src="references/galaxy.jpeg" width="150px" class="front" />
+                                     </div>
+                                     <div id="top-center" class="wrap">
+                                        <img src="references/starburst.jpg" width="150px"/>
+                                        <img src="references/galaxy.jpeg" width="150px" class="front" />
+                                     </div>
+                                     <div id="bottom-center" class="wrap">
+                                        <img src="references/starburst.jpg"width="150px" />
+                                        <img src="references/galaxy.jpeg" width="150px" class="front" />
+                                     </div>
+                                     <div id="left" class="wrap">
+                                        <img src="references/starburst.jpg" width="150px"/>
+                                        <img src="references/galaxy.jpeg" width="150px" class="front" />
+                                     </div>
+                                     
+                             </button> 
+                             </div>  
+                                <!-- <div id="images"> -->
+                            <!-- <div id="images" class="hidden"> -->
                                 <!-- Images will appear here when clicked -->
-                                <div class="container-fluid">
-                                    <div class="ImgSearch">
+                                <!-- <div class="container-fluid"> -->
+                                    <!-- <div class="ImgSearch"> -->
                                         <!--Div to Display Image search based on color-->
                                         <!-- Code from google custom search engine-->
                                         <!-- <script>
@@ -46,12 +68,9 @@
                                             })();
                                         </script>
                                         <gcse:search defaulttoimagesearch="true" disablewebsearch="true" imagesearchsesultsetsize="small"></gcse:search> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                </div>
+                  </div>                  
+                                
+                
 
                 <div class="col-xs-12 col-md-6">
                     <div id="information">
@@ -132,3 +151,11 @@
 </body>
 
 </html>
+<!-- 
+
+
+flickerURL jsonFlickrApi(
+    {"photos":
+        {"page":1,"pages":5936,"perpage":100,"total":"593597","photo":
+                                                                    [{"id":"26264601568","owner":"12639178@N07","secret":"45678a0996","server":"4661","farm":5,"title":"somebody's watching me.... , NGID733599120","ispublic":1,"isfriend":0,"isfamily":0,"url_o":"https:\/\/farm5.staticflickr.com\/4661\/26264601568_bc3d46639e_o.jpg","height_o":"2870","width_o":"3826"},{"id":"39426453334","owner":"94403580@N03","secret":"48f8d565
+                                                                     -->
