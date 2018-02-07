@@ -16,26 +16,67 @@ $(document).ready(function () {
 
         $.ajax({
             url: queryURLBase,
-            method: "GET"
+            method: "GET",
+            success: function (response) {
+                // $("#hexInfo").append(response.hex.value);
+                // $("#hexInfo").append(response.name.value);
+
+                // $("#hexInfo").append(response.hex.value);
+                // $("#hexInfo").append(response.name.value);
+
+                // $("body").css("background-color", hex());
+                $("#hexInfo").text(response.hex.value);
+                $("#colorName").text(response.name.value);
+                var colorName = response.name.value;
+                // var colorString = JSON.parse(colorName);
+                // console.log(colorName);
+                console.log(typeof colorName);
+
+
+                // renderButton();
+                console.log("res", response);
+                console.log("Hex is", response.hex.value);
+                console.log("Color name is ", response.name.value);
+                console.log("colorName", colorName);
+
+                var flickrURL = "https://api.flickr.com/services/rest";
+                $.ajax({
+                    url: flickrURL,
+                    method: 'GET',
+                    data: {
+                        api_key: "d5fbbf2c476fdcca3ad42c6374949a6a",
+                        method: "flickr.photos.search",
+                        format: "json",
+                        nojsoncallback: 1,
+                        text: colorName,
+                        extras: "url_o"
+                    },
+
+                    success: function (results) {
+                        console.log(results.photos.photo[0].url_o);
+
+                    },
+                    error: function (error) {
+                        console.log("error" + error);
+                    }
+
+                }).then(function (results) {
+
+                    // console.log('flickr', results);
+
+                });
+            },
+            error: function (error) {
+                console.log("error" + error);
+            }
         }).then(function (response) {
-            // $("#hexInfo").append(response.hex.value);
-            // $("#hexInfo").append(response.name.value);
 
-            // $("#hexInfo").append(response.hex.value);
-            // $("#hexInfo").append(response.name.value);
 
-            // $("body").css("background-color", hex());
-            $("#hexInfo").text(response.hex.value);
-            $("#colorName").text(response.name.value);
-            var colorName = response.name.value;
 
-            // renderButton();
-            console.log("res", response);
-            console.log("Hex is", response.hex.value);
-            console.log("Color name is ", response.name.value);
-            console.log("colorName", colorName);
+
         });
         return color;
+        return colorName;
 
     };
 
@@ -44,19 +85,22 @@ $(document).ready(function () {
     //start of chain to googleapi
     //
 
-    var googleURL = "https://www.googleapis.com/customsearch/v1?parameters";
-    // "http://www.google.com/search?q=(nature+OR+painting+OR+photography+OR+food+OR+interior+design+OR+logos+OR+landscapes+OR+ads+OR+pantone)" + colorName;
-    $.ajax({
-        url: googleURL,
-        method: "GET",
-        data: {
-            key: "AIzaSyC0JcHKG7NamAdCM1PA5nMKQu9SYvpzUZI",
-            cx: "AIzaSyAFBVlKmK9FQoTzO3eJmvUvNMx8jH4Dp2E",
-            q: colorName + "photo"
-        }
-    }).then(function (results) {
-        console.log("googleURL", results);
-    });
+    // var googleURL = "https://www.googleapis.com/customsearch/v1?parameters";
+    // // "http://www.google.com/search?q=(nature+OR+painting+OR+photography+OR+food+OR+interior+design+OR+logos+OR+landscapes+OR+ads+OR+pantone)" + colorName;
+    // $.ajax({
+    //     url: googleURL,
+    //     method: "GET",
+    //     data: {
+    //         key: "AIzaSyAR7-88D-ZwLvuZ_BLsQH_pCw52MMiUyig",
+    //         cx: "AIzaSyAFBVlKmK9FQoTzO3eJmvUvNMx8jH4Dp2E",
+    //         q: "mantis"
+    //         // type: "application/json"
+    //     }
+    // }).then(function (results) {
+    //     console.log("googleURL", results);
+    // });
+
+
 
 
     $("#generatorBtn").click(function () {
@@ -66,6 +110,17 @@ $(document).ready(function () {
     $("#info").click(function () {
         $("#toggle").toggle(".projectInfo");
     });
+
+    //Click camera for images
+    // $("#camera").click(function () {
+    //     $("#").toggle(".");
+    // });
+
+
+});
+
+
+
     //------------------ after the ajax 'GET' comes back with results dig down and----------------- 
     //----------------find then create a for loop ----------
 
@@ -98,7 +153,7 @@ $(document).ready(function () {
     // });
 
 
-   
+
 
 
 
@@ -109,15 +164,7 @@ $(document).ready(function () {
 
 
 
-    $("#images").click(function () {
-        $("#togglemaybe").toggle(".projectInfo");
-        // $("#craigcamerabtn").click(function(){
-        //   $("#togglemaybe").toggle(".projectInfo");
 
-        // });
-
-    });
-});
 
     //------------------------------create a render fxn --------------------------
     // var renderButton = function() {
