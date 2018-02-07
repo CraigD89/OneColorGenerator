@@ -38,15 +38,8 @@ $(document).ready(function () {
       // console.log("Color name is ", response.name.value);
       // console.log("colorName", colorName);
     });
-    //------------trying to get to colorName--------------
-    var publicAPI = {
-      color: color,
-      colorName: colorName,
-    }
-
-    return publicAPI;
-
-  };
+    //------------trying to get access to colorName--------------
+    
 
   $("body").css("background-color", "#" + hex().color);
 
@@ -55,10 +48,16 @@ $(document).ready(function () {
   $.ajax({
     url: flickrURL,
     method: 'GET',
-  }).then(function (results) {
-    console.log('flckr', results.photos.photo[0].url_o);
-  });
+    success: function (results) {
+      console.log(results.photos.photo[0].url_o);
+  return colorName;
+},
+error: function (error) {
+    console.log("error" + error);
+}
+}).then(function (results) {
 });
+    
 
 
   // var googleURL = "https://www.googleapis.com/customsearch/v1?parameters";
