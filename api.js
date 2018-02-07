@@ -1,11 +1,90 @@
 $(document).ready(function () {
-  console.log("I am working")
-  //Random hex generator
-  var hex = function () {
-    var letters = "0123456789ABCDEF";
-    var color = "";
-    for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16) | 0];
+//   console.log("I am working")
+//   //Random hex generator
+//   var hex = function () {
+//     var letters = "0123456789ABCDEF";
+//     var color = "";
+//     for (var i = 0; i < 6; i++) {
+//       color += letters[Math.floor(Math.random() * 16) | 0];
+    console.log("I am working")
+    //Random hex generator
+    var hex = function () {
+        var letters = "0123456789ABCDEF";
+        var color = "";
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16) | 0];
+        };
+
+
+        console.log("Random color is ", color);
+
+        var queryURLBase = "http://www.thecolorapi.com/id?format=json&hex=" + color;
+        // console.log("url", queryURLBase);
+
+        $.ajax({
+            url: queryURLBase,
+            method: "GET",
+            success: function (response) {
+                // $("#hexInfo").append(response.hex.value);
+                // $("#hexInfo").append(response.name.value);
+
+                // $("#hexInfo").append(response.hex.value);
+                // $("#hexInfo").append(response.name.value);
+
+                // $("body").css("background-color", hex());
+                $("#hexInfo").text(response.hex.value);
+                $("#colorName").text(response.name.value);
+                var colorName = response.name.value;
+                // var colorString = JSON.parse(colorName);
+                // console.log(colorName);
+                console.log(typeof colorName);
+
+
+                // renderButton();
+                console.log("res", response);
+                console.log("Hex is", response.hex.value);
+                console.log("Color name is ", response.name.value);
+                console.log("colorName", colorName);
+
+                var flickrURL = "https://api.flickr.com/services/rest";
+                $.ajax({
+                    url: flickrURL,
+                    method: 'GET',
+                    data: {
+                        api_key: "d5fbbf2c476fdcca3ad42c6374949a6a",
+                        method: "flickr.photos.search",
+                        format: "json",
+                        nojsoncallback: 1,
+                        text: colorName,
+                        extras: "url_o"
+                    },
+
+                    success: function (results) {
+                        console.log(results.photos.photo[0].url_o);
+
+                    },
+                    error: function (error) {
+                        console.log("error" + error);
+                    }
+
+                }).then(function (results) {
+
+                    // console.log('flickr', results);
+
+                });
+            },
+            error: function (error) {
+                console.log("error" + error);
+            }
+        }).then(function (response) {
+
+
+
+
+        });
+        return color;
+        return colorName;
+
     };
 
 
@@ -114,9 +193,29 @@ $(document).ready(function () {
 //     // $("#craigcamerabtn").click(function(){
 //     //   $("#togglemaybe").toggle(".projectInfo");
 
+
 //   });
 
-// });
+    $("#generatorBtn").click(function () {
+        $("body").css("background-color", "#" + hex());
+    });
+
+    $("#info").click(function () {
+        $("#toggle").toggle(".projectInfo");
+    });
+
+    //Click camera for images
+    // $("#camera").click(function () {
+    //     $("#").toggle(".");
+    // });
+
+
+});
+
+
+
+    //------------------ after the ajax 'GET' comes back with results dig down and----------------- 
+    //----------------find then create a for loop ----------
 
 // $(document).ready(function () {
 
@@ -168,6 +267,7 @@ $(document).ready(function () {
 //     }, 800);
 //   });
 
+
 // });
 
 // //------------------------------create a render fxn --------------------------
@@ -202,6 +302,7 @@ $(document).ready(function () {
 // //         // console.log(response.name.value);
 // //       });
 // //     };
+
 
 
 // //   $("body").css("background-color", hex());

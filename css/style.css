@@ -34,7 +34,7 @@ h1{
     background-color: transparent;
     color: black; 
     font-family: 'Montserrat', sans-serif;
-    font-weight: thin;
+    /* font-weight: thin; */
 }
 
 #info {
@@ -45,6 +45,12 @@ h1{
     right: 0;
     top: 0;
     width: 10%;
+}
+
+.projectInfo {
+    display: none;
+    float: right;
+    width: 300%;
 }
 
 button{
@@ -85,11 +91,6 @@ p {
     text-align: center;
     font-weight: bold;
   }
-
-.projectInfo {
-      display: none;
-      float: right;
-}
 
 #generatorBtn {
     position: fixed;
@@ -146,4 +147,20 @@ img
  top:0px;
  left:0;
  position:absolute;
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: black;
+}
+
+a:active {
+    color: black;
 }
