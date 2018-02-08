@@ -18,7 +18,7 @@ $(document).ready(function () {
 
     console.log("Random color is ", color);
 
-    var queryURLBase = "http://www.thecolorapi.com/id?format=json&hex=" + color;
+    var queryURLBase = "https://www.thecolorapi.com/id?format=json&hex=" + color;
     // console.log("url", queryURLBase);
 
     var flickrPic = [];
