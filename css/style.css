@@ -26,7 +26,7 @@ h1{
    /* width: 25%; */
    position: fixed;
    left: 0;
-   top: 0;
+   bottom: 0;
    padding: 10px;
 }
 
@@ -108,11 +108,28 @@ p {
      padding-bottom: 60%;
 }
 
+/* #photoSearch{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+} */
+
 #camera{
 
     background-color: transparent;
     color: black;
     font-size: 50px;
+}
+
+#cameraImages{
+    float: right;
+}
+
+
+
+.photoInfo{
+    display: none;
+    float: right;
 }
 
 /* footer {
@@ -133,20 +150,11 @@ p {
     bottom: 0;
 } */
 
-.wrap
-{
-  float:left;
-  position:relative;
-  width:150px;
-  height:150px;
-  /* margin:20px; */
-  overflow:hidden;
-}
 
-img
-{
+
+img{
  top:0px;
- left:0;
+ left:0px;
  position:absolute;
 } 
 
@@ -164,4 +172,28 @@ a:hover {
 
 a:active {
     color: black;
+}
+
+/* #cameraImages{
+    overflow: visible;
+} */
+
+/* #top{
+    position: relative;
+    top: 1000px;
+
+} */
+
+.wrap
+{
+  float:left;
+  position:relative;
+  width:300px;
+  height:300px;
+  /* margin:20px; */
+  overflow:hidden;
+}
+
+.errorInfo{
+    display: none;
 }
