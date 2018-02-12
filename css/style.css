@@ -1,3 +1,4 @@
+/* General CSS */
 html body {
     margin: 0 auto;
     height: 100%;
@@ -6,51 +7,9 @@ html body {
     font-weight: thin;
 }
 
-/* .row {
-    height: 300px;
-} */
-
 h1{
     background-color: transparent;
     font-weight: bold;
-}
-
-#colorDiv {
-    color: black;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: thin;
-}
-
-.logo {
-   text-align: center;
-   /* width: 25%; */
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   padding: 10px;
-}
-
-.learnMore {
-    background-color: transparent;
-    color: black; 
-    font-family: 'Montserrat', sans-serif;
-    /* font-weight: thin; */
-}
-
-#info {
-    float:right;
-    /* font-weight: bold; */
-    font-size: 20px;
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 10%;
-}
-
-.projectInfo {
-    display: none;
-    float: right;
-    width: 300%;
 }
 
 button{
@@ -59,104 +18,10 @@ button{
     background-color: transparent;
 }
 
-/* .slider {
-    position: absolute;
-    right: 0;
-    background-color: rgb(34, 33, 33);
-    transform: translateX(100%);
- } */
- 
- /* #info:hover .slider--visible {
-    transform: translateX(0%);
-    transition: transform 1s linear; 
- }  */
-
 p {
     color: black;
     background-color: transparent;
 }
-  
-  #hexInfo{
-    background: none;
-    color: black;
-    font-size: 100px;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  #colorName{
-    background: none;
-    color: black;
-    font-size: 100px;
-    text-align: center;
-    font-weight: bold;
-  }
-
-#generatorBtn {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    width: 25%;
-    background-color: transparent;
-    color: black;
-    text-align: center;
-    font-weight: bold;
-}
-
- #information{
-     padding-top: 40%;
-     padding-bottom: 60%;
-}
-
-/* #photoSearch{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-} */
-
-#camera{
-
-    background-color: transparent;
-    color: black;
-    font-size: 50px;
-}
-
-#cameraImages{
-    float: right;
-}
-
-
-
-.photoInfo{
-    display: none;
-    float: right;
-}
-
-/* footer {
-    height: 100px;
-    background-color: black;
-    color: white;
-} */
-
-/* .header {
-    position: fixed;
-    top: 0;
-} */
-
-/* #photoSearch{
-    padding-top: 10px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-} */
-
-
-
-img{
- top:0px;
- left:0px;
- position:absolute;
-} 
 
 a:link {
     color: black;
@@ -174,15 +39,54 @@ a:active {
     color: black;
 }
 
-/* #cameraImages{
-    overflow: visible;
-} */
+ /* Left Column */
 
-/* #top{
-    position: relative;
-    top: 1000px;
+#colorDiv {
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: thin;
+}
 
-} */
+.logo {
+   text-align: center;
+   position: fixed;
+   left: 0;
+   top: 0;
+   padding: 20px;
+   margin-left: 40px;
+}
+
+#photoSearch{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+#camera{
+    background-color: transparent;
+    color: black;
+    font-size: 50px;
+    padding: 20px;
+    margin-left: 40px;
+}
+
+#cameraImages{
+    float: right;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+}
+
+.photoInfo{
+    display: none;
+    float: right;
+}
+
+.errorInfo{
+    display: none;
+    font-size: 20px;
+}
 
 .wrap
 {
@@ -190,10 +94,74 @@ a:active {
   position:relative;
   width:300px;
   height:300px;
-  /* margin:20px; */
   overflow:hidden;
 }
 
-.errorInfo{
-    display: none;
+img{
+ top:0px;
+ left:0px;
+ position:absolute;
+} 
+
+/* Center Column */
+
+ #information{
+     padding-top: 40%;
+     padding-bottom: 60%;
 }
+
+#hexInfo{
+    background: none;
+    color: black;
+    font-size: 100px;
+    text-align: center;
+    font-weight: bold;
+}
+
+  #colorName{
+    background: none;
+    color: black;
+    font-size: 100px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+/* Right Column */
+
+#info {
+    font-size: 20px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 20px;
+    margin-right: 40px;
+}
+
+.projectInfo {
+    font-size: 16px;
+    display: none;
+    float: right;
+    position: absolute;
+    z-index: 1;
+    top: 125%;
+    right: 50%;
+    width: 500%;
+}
+
+#generatorBtn {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    background-color: transparent;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    margin-right: 40px;
+}
+
+/* .learnMore {
+    background-color: transparent;
+    color: black; 
+    font-family: 'Montserrat', sans-serif;
+} */
