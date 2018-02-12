@@ -1,25 +1,15 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-
-
-
-    <title>OneColorGenerator</title>
-
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
     <link href="https://fonts.googleapis.com/css?family=Montserrat:thin" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-
+    <title>OneColorGenerator</title>
 </head>
-
 <body>
-
     <div class="container-fluid">
-
         <div class="wrapper">
 
             <div id="colorDiv" class="row">
@@ -27,92 +17,29 @@
                     <div class="logo">
                         <h1>ONE COLOR GENERATOR</h1>
                     </div>
-                    <!-- Generate photos button -->
-                    <!-- <div id="photoSearch"> -->
-
-                    <!-- <button id="camera" class="glyphicon glyphicon-camera">
-
-                            <div id="images" class="photoInfo">
-                                <div id="top-left" class="wrap">
-                                    <img src="references/starburst.jpg" width="150px" />
-                                    <img src="references/galaxy.jpeg" width="150px" class="front" />
-                                </div>
-                                <div id="top-center" class="wrap">
-                                    <img src="references/starburst.jpg" width="150px" />
-                                    <img src="references/galaxy.jpeg" width="150px" class="front" />
-                                </div>
-                                <div id="bottom-center" class="wrap">
-                                    <img src="references/starburst.jpg" width="150px" />
-                                    <img src="references/galaxy.jpeg" width="150px" class="front" />
-                                </div>
-                                <div id="left" class="wrap">
-                                    <img src="references/starburst.jpg" width="150px" />
-                                    <img src="references/galaxy.jpeg" width="150px" class="front" />
-                                </div>
-                            </div>
-                        </button>
-
-                    </div> -->
-
 
                     <div id="photoSearch">
-
                         <button id="camera" class="glyphicon glyphicon-camera">
-
-
-                            <!-- Flickr images appear here -->
                             <div id="cameraImages" class="photoInfo">
                                 <div id="top" class="wrap">
                                     <img id="flickr-pic0" src="" width="300px" />
                                     <img id="flickr-pic1" src="" width="300px" class="front" />
                                 </div>
-
                                 <div id="center" class="wrap">
                                     <img id="flickr-pic2" src="" width="300px" />
                                     <img id="flickr-pic3" src="" width="300px" class="front" />
                                 </div>
                             </div>
-
-
-
-                            <!-- Error message -->
                             <div id="errorMessage" class="errorInfo">
-                                <h2>You have reached an Error Page!</h2>
-                                <p>We are still developing developers and are working out the kinks. Here is a link to a puppy
-                                    video.</p>
+                                <p>You have reached an Error Page!</p>
+                                <p>We are still developing developers, and we are working out the kinks. Here is a link to a
+                                    puppy video.
+                                </p>
                                 <a href="https://www.youtube.com/watch?v=f6OPAwpKO1o">Puppies are Here</a>
                             </div>
-
-                            <!-- <div id="bottom" class="wrap">
-                                    <img id="flickr-pic2" src="references/starburst.jpg" width="150px" />
-                                    <img src="references/galaxy.jpeg" width="150px" class="front" />
-                                </div> -->
                         </button>
-
                     </div>
 
-
-                    <!-- <div id="images"> -->
-                    <!-- <div id="images" class="hidden"> -->
-                    <!-- Images will appear here when clicked -->
-                    <!-- <div class="container-fluid"> -->
-                    <!-- <div class="ImgSearch"> -->
-                    <!-- <div id="photoSearch"> -->
-                    <!-- <button id="camera" class="glyphicon glyphicon-camera"> -->
-                    <!-- <div id="toggle" class="images"> -->
-                    <!-- <div id="" class="hidden"> -->
-                    <!-- IMAGES GO HERE -->
-                    <!-- </div> -->
-
-
-                    <!--                   </div>                   -->
-
-
-                    <!-- </div>
-                                </div> -->
-                    <!-- </div> -->
-                    <!-- </button> -->
-                    <!-- </div> -->
                 </div>
 
                 <div class="col-xs-12 col-md-6">
@@ -121,6 +48,7 @@
                         <h1 id="colorName"></h1>
                     </div>
                 </div>
+
                 <div class="col-xs-12 col-md-3">
 
                     <div>
@@ -148,63 +76,13 @@
                                 <h1>GENERATE COLOR</h1>
                             </button>
                         </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-                    <div id="information">
-                        <h1 id="hexInfo"></h1>
-                        <h1 id="colorName"></h1>
                     </div>
                 </div>
             </div>
-
-            <!-- <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                    <button id="generatorBtn">
-                        <h1>GENERATE COLOR</h1>
-                    </button>
-                </div>
-            </div> -->
-
-
-
-
-            <!-- Generate photos button -->
-            <!-- <div id="photoSearch">
-                <button id="camera" class="glyphicon glyphicon-camera">
-                </button>
-            </div> -->
-
-            <!-- Generate Color button -->
-            <!-- <div class="footer">
-                <button id="generatorBtn">
-                    <h1>GENERATE COLOR</h1>
-                </button>
-            </div> -->
 
         </div>
     </div>
 
-
-    <!--[ footer ] -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-    <!-- <script type="text/javascript"></script> -->
     <script type="text/javascript" src="api.js"></script>
-
 </body>
-
 </html>
-<!-- 
-
-
-flickerURL jsonFlickrApi(
-    {"photos":
-        {"page":1,"pages":5936,"perpage":100,"total":"593597","photo":
-                                                                    [{"id":"26264601568","owner":"12639178@N07","secret":"45678a0996","server":"4661","farm":5,"title":"somebody's watching me.... , NGID733599120","ispublic":1,"isfriend":0,"isfamily":0,"url_o":"https:\/\/farm5.staticflickr.com\/4661\/26264601568_bc3d46639e_o.jpg","height_o":"2870","width_o":"3826"},{"id":"39426453334","owner":"94403580@N03","secret":"48f8d565
-                                                                     -->
