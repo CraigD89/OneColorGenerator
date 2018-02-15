@@ -1,4 +1,4 @@
-/* General CSS */
+/* General Styling */
 html body {
     margin: 0 auto;
     height: 100%;
@@ -12,6 +12,10 @@ h1{
     font-weight: bold;
 }
 
+h1:hover{
+    color: white;
+}
+
 button{
     outline: none;
     border: none;
@@ -23,6 +27,9 @@ p {
     background-color: transparent;
 }
 
+p:hover{
+    color: white;
+}
 a:link {
     color: black;
 }
@@ -32,14 +39,14 @@ a:visited {
 }
 
 a:hover {
-    color: black;
+    color: white;
 }
 
 a:active {
     color: black;
 }
 
- /* Left Column */
+/* Left Column */
 
 #colorDiv {
     color: black;
@@ -68,6 +75,10 @@ a:active {
     font-size: 50px;
     padding: 20px;
     margin-left: 40px;
+}
+
+#camera:hover{
+    color: white;
 }
 
 #cameraImages{
@@ -118,13 +129,21 @@ img{
     font-weight: bold;
 }
 
-  #colorName{
+#hexInfo:hover{
+    color: white;
+}
+
+#colorName{
     background: none;
     color: black;
     font-size: 100px;
     text-align: center;
     font-weight: bold;
-  }
+}
+
+#colorName:hover{
+    color: white;
+}
 
 /* Right Column */
 
@@ -138,7 +157,8 @@ img{
 }
 
 .projectInfo {
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: bold;
     display: none;
     float: right;
     position: absolute;
@@ -159,9 +179,3 @@ img{
     font-weight: bold;
     margin-right: 40px;
 }
-
-/* .learnMore {
-    background-color: transparent;
-    color: black; 
-    font-family: 'Montserrat', sans-serif;
-} */
