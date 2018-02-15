@@ -1,6 +1,11 @@
 $(document).ready(function () {
 
-  //Random hex generator
+  /**
+   * Generates a random hexidecimal value
+   * @generator
+   * @function hex
+   * @return {string} color - hexidecimal value
+   */
   var hex = function () {
     var letters = "0123456789ABCDEF";
     var color = "";
@@ -12,17 +17,33 @@ $(document).ready(function () {
 
     var flickrPic = [];
 
-    //TheColorAPI AJAX call
+    /**
+    * Fetches data from TheColorAPI and stores in color variable
+    * @function success
+    * @param {object} response - JSON data recieved from TheColorAPI
+    * @param {string} response.hex.value - color hex value matched from generator
+    * @param {string} response.name.value - color name matched from generator
+    * @function error
+    * @param {string} error
+    * @return {string} colorName - the name of the generated color
+    */
     $.ajax({
       url: queryURLBase,
       method: "GET",
       success: function (response) {
-
         $("#hexInfo").text(response.hex.value);
         $("#colorName").text(response.name.value);
         var colorName = response.name.value;
 
-        //Flickr AJAX call
+        /**
+        * Fetches image data from Flickr's API
+        * @function success
+        * @param {object} results - JSON data recieved from Flickr API
+        * @param {string} results.photos.photo[i].url_q - image URL from Flickr
+        * @function error
+        * @param {string} error
+        * @return {array} flickrPic - array of first four Flickr images
+        */
         var flickrURL = "https://api.flickr.com/services/rest";
         $.ajax({
           url: flickrURL,
@@ -36,10 +57,8 @@ $(document).ready(function () {
             safe_search: 1,
             extras: "url_q"
           },
-
           success: function (results) {
             if (results != "undefined") {
-              // Try a for in loop here
               for (var i = 0; i < 4; i++) {
                 flickrPic.push(results.photos.photo[i].url_q);
               }
@@ -66,31 +85,38 @@ $(document).ready(function () {
     return colorName;
   };
 
-  // Auto generates color to page when opened
+  /**
+   * Auto generates color to page when opened
+   */
   $("body").css("background-color", "#" + hex());
 
-
-  // Click Generate Color for a new color on screen
+  /**
+   * Click Generate Color for a new color on screen
+   */
   $("#generatorBtn").click(function () {
     $("body").css("background-color", "#" + hex());
-    $("#cameraImages").hide(".photoInfo", function(){});
+    $("#cameraImages").hide(".photoInfo", function () { });
   });
 
-  // Click for website information and tutorial
+  /**
+   * Click for website information and tutorial
+   */
   $("#info").click(function () {
     $("#toggle").toggle(".projectInfo");
   });
 
-
-  //Click camera for images
+  /**
+   * Click camera button for images
+   */
   $("#camera").click(function () {
     $("#cameraImages").toggle(".photoInfo");
   });
 
-  //End of Document Ready
 });
 
-//Image sliding animation
+/**
+ * Image sliding animation
+ */
 $('#top').hover(function () {
   $(this).children('.front').stop().animate({
     'top': '400px',
