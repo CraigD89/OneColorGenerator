@@ -16,6 +16,10 @@ OneColorGenerator is a simple web app that produces a color based on a random he
 ## Usage
 - OneColorGenerator was built to be used as a tool for anyone who works with color: graphic designers, artists, interior designers, painters, etc.
 
+## Demo
+A demo of OneColorGenerator can be found [here](https://craigd89.github.io/OneColorGenerator/).
+
+
 
 ## How we built the app
 - Technologies
